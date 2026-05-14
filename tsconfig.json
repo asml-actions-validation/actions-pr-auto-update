@@ -1,12 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "outDir": "./bin",
-    "rootDir": "./src",
-    "strict": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true
-  },
-  "exclude": ["node_modules", "__tests__", "__mocks__"]
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"lib": ["ESNext"],
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"noImplicitAny": false,
+		"rootDir": "./src",
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "esnext"
+	},
+	"exclude": ["node_modules", "__tests__", "__mocks__"]
 }
