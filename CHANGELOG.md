@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/castastrophe/actions-pr-auto-update/compare/v2.0.0...v3.0.0) (2026-05-14)
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Node 24, Yarn 4.14.1, and major dependency versions (#33)
+
+### ✨ Features
+
+*upgrade to Node 24, Yarn 4.14.1, and major dependency versions ([#33](https://github.com/castastrophe/actions-pr-auto-update/issues/33)) ([b50cde2]())
+
+* feat!: upgrade to Node 24, Yarn 4.14.1, and major dependency versions
+
+- Bump Node runtime from 22 to 24 (action.yml `using: node24`, `.nvmrc`, `engines`)
+- Upgrade Yarn to 4.14.1 and bundle the release cjs in `.yarn/releases/`
+- Upgrade `@actions/core` 1.x → 3.x and `@actions/github` 6.x → 9.x
+- Upgrade `typescript` 5.x → 6.x, `eslint` 9.x → 10.x, `lint-staged` 16.x → 17.x
+- Upgrade `@commitlint/*` 20.x → 21.x, `jest` + `ts-jest` to latest
+- Migrate ESLint config from `.eslintrc.json` to flat `eslint.config.js`
+- Migrate `commitlint.config.js` and `jest.config.js` to ESM exports
+- Convert `.releaserc` JSON to `.releaserc.js` for richer semantic-release config
+- Add `markdownlint` config and tooling; add `eslint-plugin-jsonc`
+- Add `.env.example` and `@allons-y/envoy` for environment setup
+- Scope package name to `@allons-y/actions-pr-auto-update`
+- Fix optional chaining throughout `src/main.ts` for safer property access
+- Update CI workflows: use `node-version-file`, bump `actions/cache` + `actions/checkout` to v6
+- Improve `action.yml` input/output descriptions
+
 ## [2.0.0](https://github.com/castastrophe/actions-pr-auto-update/compare/v1.0.0...v2.0.0) (2025-11-04)
 
 ### Bug Fixes
