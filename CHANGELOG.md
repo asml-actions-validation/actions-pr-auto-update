@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/castastrophe/actions-pr-auto-update/compare/v3.0.0...v3.0.1) (2026-05-15)
+
+### 🐛 Bug Fixes
+
+
+*remove broken auth pre-check and dedupe 3.0.0 changelog ([#35](https://github.com/castastrophe/actions-pr-auto-update/issues/35)) ([c556406]())
+
+- Remove the users.getAuthenticated() pre-flight check in src/main.ts.
+  That endpoint (GET /user) is forbidden for GitHub App installation
+  tokens — the default GITHUB_TOKEN — so the action was failing with
+  "Resource not accessible by integration" for every consumer using
+  the default token. Auth errors surface naturally from the first
+  real API call (pulls.list); the probe was dead weight.
+- Update the test suite to match: the obsolete "fails when
+  authentication fails" case is rewritten against the pulls.list
+  iterator. All 20 tests pass; coverage and lint unchanged.
+- Deduplicate the 3.0.0 section that re-crept into CHANGELOG.md
+  during the release-pipeline glitch in run #25919970724.
+- Build bin/index.js only at release time. The Release workflow now
+  rebuilds the bundle and @semantic-release/git commits it onto the
+  tagged chore(release) commit. bin/ is gitignored on main and
+  feature branches, and build.yml no longer fails PRs on bundle
+  drift. Consumers pin to tags, so they still get the bundle.
+
+
+*unify linting toolchain and remove duplicate changelog entries ([#34](https://github.com/castastrophe/actions-pr-auto-update/issues/34)) ([d3800cc]())
+
+Replace standalone markdownlint, prettier, and jsonc-eslint-parser with @eslint/json, @eslint/markdown, and eslint-config-prettier so a single eslint invocation covers TS, JS, JSON, and Markdown. 
+
+Simplify lint-staged and the lint/format scripts accordingly. Also remove the duplicate 3.0.0
+section from CHANGELOG.md and correct bold-to-heading formatting.
+
 ## [3.0.0](https://github.com/castastrophe/actions-pr-auto-update/compare/v2.0.0...v3.0.0) (2026-05-14)
 
 ### ⚠ BREAKING CHANGES
