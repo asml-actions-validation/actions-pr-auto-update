@@ -60,13 +60,8 @@ export default {
 					commitPartial: `
 *{{#if scope}} **{{scope}}:**{{~/if}}
 {{~#if subject}}{{subject}}{{else}}{{header}}{{/if}}
-{{~#if hash}}{{#if @root.linkReferences}} ([{{shortHash}}]({{commitUrlFormat}})){{else}} {{shortHash}}{{/if}}{{/if}}
-{{~#if references}}, closes{{#each references}} {{#if @root.linkReferences}}[#{{this.issue}}]({{issueUrlFormat this.issue}}){{else}}#{{this.issue}}{{/if}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}}
-{{#if body}}
-
-{{body}}
-
-{{/if}}`,
+{{~#if hash}}{{#if @root.linkReferences}} ([{{shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{hash}}))){{else}} {{shortHash}}{{/if}}{{/if}}
+{{~#if references}}, closes{{#each references}} {{#if @root.linkReferences}}[#{{this.issue}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/issues/{{this.id}}){{else}}#{{this.issue}}{{/if}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}}`,
 				},
 			},
 		],

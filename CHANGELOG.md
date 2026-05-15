@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [Conven
 ### 🐛 Bug Fixes
 
 
-*remove broken auth pre-check and dedupe 3.0.0 changelog ([#35](https://github.com/castastrophe/actions-pr-auto-update/issues/35)) ([c556406]())
+*remove broken auth pre-check and dedupe 3.0.0 changelog ([#35](https://github.com/castastrophe/actions-pr-auto-update/issues/35)) ([c556406](https://github.com/castastrophe/actions-pr-auto-update/commit/c5564066b38099bec201de2a619526243d56d094))
 
 - Remove the users.getAuthenticated() pre-flight check in src/main.ts.
   That endpoint (GET /user) is forbidden for GitHub App installation
@@ -26,14 +26,6 @@ All notable changes to this project will be documented in this file. See [Conven
   feature branches, and build.yml no longer fails PRs on bundle
   drift. Consumers pin to tags, so they still get the bundle.
 
-
-*unify linting toolchain and remove duplicate changelog entries ([#34](https://github.com/castastrophe/actions-pr-auto-update/issues/34)) ([d3800cc]())
-
-Replace standalone markdownlint, prettier, and jsonc-eslint-parser with @eslint/json, @eslint/markdown, and eslint-config-prettier so a single eslint invocation covers TS, JS, JSON, and Markdown. 
-
-Simplify lint-staged and the lint/format scripts accordingly. Also remove the duplicate 3.0.0
-section from CHANGELOG.md and correct bold-to-heading formatting.
-
 ## [3.0.0](https://github.com/castastrophe/actions-pr-auto-update/compare/v2.0.0...v3.0.0) (2026-05-14)
 
 ### ⚠ BREAKING CHANGES
@@ -42,7 +34,7 @@ Upgrade to Node 24, Yarn 4.14.1, and major dependency versions (#33)
 
 ### ✨ Features
 
-*add test suite, harden CI tooling, and refresh docs ([210ea83](210ea83a179aad8257590d3dd4fbe1f157470a83))
+*add test suite, harden CI tooling, and refresh docs ([210ea83](https://github.com/castastrophe/actions-pr-auto-update/commit/210ea83a179aad8257590d3dd4fbe1f157470a83))
 
 #### Tests
 
