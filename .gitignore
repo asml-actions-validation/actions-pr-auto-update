@@ -14,7 +14,7 @@ coverage/
 # Environment variables
 .env
 
-# Built files
+# Built files (rebuilt and committed by semantic-release during the Release workflow)
 bin/
 
 # Caches
