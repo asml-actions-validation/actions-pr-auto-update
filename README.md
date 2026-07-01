@@ -4,7 +4,7 @@ A configurable GitHub Action that keeps your open pull requests in sync with the
 
 [![Build](https://github.com/castastrophe/actions-pr-auto-update/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/castastrophe/actions-pr-auto-update/actions/workflows/build.yml)
 [![Testing](https://github.com/castastrophe/actions-pr-auto-update/actions/workflows/testing.yml/badge.svg?branch=main)](https://github.com/castastrophe/actions-pr-auto-update/actions/workflows/testing.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](LICENSE)
 
 When you merge to `main` (or push to any long-lived branch), every open PR targeting that branch falls behind. This action picks them up and runs GitHub's "Update branch" API on each one, so your contributors don't have to. Bot PRs (Dependabot et al.), closed PRs, and — by default — drafts are skipped. Label-based include/exclude rules let you scope it further.
 
@@ -142,7 +142,7 @@ Contributions are welcome! Please open an [issue](https://github.com/castastroph
 
 ## License
 
-This project is licensed under the [MIT license](LICENSE).
+[MPL-2.0](LICENSE) — use freely, modify as needed; changes to MPL-licensed files should be shared back under the same license.
 
 ## Funding ☕️
 
